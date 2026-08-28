@@ -653,6 +653,15 @@ a.section-path-title:hover {
   }
 }
 
+/* ===== 页脚信息:横排 + 邮箱 ===== */
+.hextra-footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 2rem;
+  row-gap: 0.5rem;
+}
+
 /* 右侧文章导航:桌面显示,窄屏隐藏 */
 .hextra-article-nav {
   display: block;
