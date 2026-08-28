@@ -1,0 +1,89 @@
+{{- /* 阅读进度条 + 返回顶部按钮(纯原生 JS,无依赖) */ -}}
+<script>
+  (function () {
+    function ready(fn) {
+      if (document.body) fn();
+      else document.addEventListener("DOMContentLoaded", fn);
+    }
+
+    /* 阅读进度条:滚动时顶部渐变进度提示 */
+    ready(function () {
+      var bar = document.createElement("div");
+      bar.id = "reading-progress";
+      bar.setAttribute("aria-hidden", "true");
+      document.body.appendChild(bar);
+
+      var ticking = false;
+      function update() {
+        var doc = document.documentElement;
+        var max = doc.scrollHeight - doc.clientHeight;
+        var pct = max > 0 ? Math.min(100, (doc.scrollTop / max) * 100) : 0;
+        bar.style.width = pct + "%";
+        ticking = false;
+      }
+      function request() {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(update);
+        }
+      }
+      document.addEventListener("scroll", request, { passive: true });
+      window.addEventListener("resize", request, { passive: true });
+      update();
+    });
+
+    /* 返回顶部:向下滚动时显示,10 秒无滚动或向上滚动时隐藏 */
+    ready(function () {
+      var btn = document.createElement("button");
+      btn.id = "back-to-top";
+      btn.type = "button";
+      btn.setAttribute("aria-label", "返回顶部");
+      btn.setAttribute("title", "返回顶部");
+      btn.setAttribute("tabindex", "-1");
+      btn.innerHTML =
+        '<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" /></svg>';
+      document.body.appendChild(btn);
+
+      var HIDE_DELAY = 10000;
+      var SHOW_AFTER = 300;
+      var lastY = window.scrollY;
+      var hideTimer = null;
+
+      function show() {
+        btn.classList.add("show");
+        btn.removeAttribute("tabindex");
+      }
+      function hide() {
+        btn.classList.remove("show");
+        btn.setAttribute("tabindex", "-1");
+        clearTimeout(hideTimer);
+      }
+      function armHide() {
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(hide, HIDE_DELAY);
+      }
+
+      window.addEventListener(
+        "scroll",
+        function () {
+          var y = window.scrollY;
+          var goingDown = y > lastY;
+          lastY = y;
+          if (y > SHOW_AFTER && goingDown) {
+            show();
+            armHide();
+          } else {
+            hide();
+          }
+        },
+        { passive: true }
+      );
+
+      btn.addEventListener("click", function () {
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+        hide();
+      });
+    });
+  })();
+</script>

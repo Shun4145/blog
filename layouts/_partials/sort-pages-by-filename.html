@@ -1,0 +1,20 @@
+{{- /* 按文件名自然排序(数字前缀 01_,02_ 按数值大小),非数字前缀排在后面,栏目排前面 */ -}}
+{{- $input := .pages -}}
+{{- $sections := where $input "IsSection" true -}}
+{{- $pages := where $input "IsSection" false -}}
+{{- $indexed := slice -}}
+{{- range $pages -}}
+  {{- $name := "" -}}
+  {{- with .File }}{{ $name = .ContentBaseName }}{{ end -}}
+  {{- $sortKey := printf "99999999_%s" $name -}}
+  {{- with findRE "^[0-9]+" $name -}}
+    {{- $numStr := strings.TrimLeft "0" (index . 0) -}}{{ if eq $numStr "" }}{{ $numStr = "0" }}{{ end -}}{{- $num := int $numStr -}}
+    {{- $sortKey = printf "%08d_%s" $num $name -}}
+  {{- end -}}
+  {{- $indexed = $indexed | append (dict "page" . "sortKey" $sortKey) -}}
+{{- end -}}
+{{- $indexed = sort $indexed "sortKey" -}}
+{{- $result := slice -}}
+{{- range $sections }}{{ $result = $result | append . }}{{ end -}}
+{{- range $indexed }}{{ $result = $result | append .page }}{{ end -}}
+{{- return $result -}}

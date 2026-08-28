@@ -1,0 +1,12 @@
+{{- with .Site.Taxonomies.tags.ByCount -}}
+  <div class="hx:flex hx:flex-wrap hx:gap-3">
+    {{- range . -}}
+      <a href="{{ .Page.RelPermalink | relURL }}" class="hx:inline-flex hx:items-center hx:rounded-full hx:border hx:border-gray-200 hx:bg-gray-50 hx:px-3 hx:py-1 hx:text-sm hx:text-gray-600 hx:transition-colors hx:hover:border-primary-400 hx:hover:text-primary-600 hx:dark:border-neutral-700 hx:dark:bg-neutral-800 hx:dark:text-neutral-400 hx:dark:hover:text-primary-400">
+        {{- .Page.LinkTitle -}}
+        <span class="hx:ml-1.5 hx:text-xs hx:text-gray-400">{{ .Count }}</span>
+      </a>
+    {{- end -}}
+  </div>
+{{- else -}}
+  <p class="hx:text-gray-500">暂无标签</p>
+{{- end -}}

@@ -1,0 +1,61 @@
+{{- /* 首页侧栏:项目推进 / 最近更新 / 标签 */ -}}
+{{- $currentSect := .FirstSection | default . -}}
+
+<aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:sticky">
+  {{- /* 左栏顶部 section tabs:首页/Agent/RAG */ -}}
+  <nav class="hx:flex hx:gap-1 hx:overflow-x-auto hx:px-4 hx:pt-3 hx:border-b hx:border-gray-200 hx:dark:border-neutral-800">
+    {{- range site.Menus.main -}}
+      {{- $mtype := .Params.type | default "" -}}
+      {{- if or (eq $mtype "search") (eq $mtype "theme-toggle") (eq $mtype "language-switch") -}}{{- continue -}}{{- end -}}
+      {{- $link := .URL -}}
+      {{- with .PageRef -}}{{ if hasPrefix . "/" }}{{ $link = relLangURL (strings.TrimPrefix "/" .) }}{{ end }}{{ end -}}
+      {{- $active := eq (strings.TrimSuffix "/" $currentSect.RelPermalink) (strings.TrimSuffix "/" $link) -}}
+      {{- $activeClass := cond $active "hx:border-primary-500 hx:text-primary-600 hx:font-medium hx:dark:border-primary-500 hx:dark:text-primary-600" "hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100" -}}
+      <a href="{{ $link }}" class="hx:inline-flex hx:-mb-px hx:shrink-0 hx:border-b-2 hx:px-2 hx:py-1.5 hx:text-sm hx:whitespace-nowrap hx:transition-colors {{ $activeClass }}"><span class="hx:text-center">{{ or (T .Identifier) .Name | safeHTML }}</span></a>
+    {{- end -}}
+  </nav>
+
+  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--hextra-navbar-height)-var(--menu-height))]">
+    {{- /* 项目推进:每个栏目显示已发布/规划进度 */ -}}
+    <section class="home-side-section">
+      <h3 class="home-side-title">发布/规划</h3>
+      {{- range site.Sections -}}
+        {{- if not .RegularPages }}{{ continue }}{{ end -}}
+        {{- $published := len .RegularPages -}}
+        {{- $plannedCount := 0 -}}
+        {{- with .Params.planned }}{{ $plannedCount = len . }}{{ end -}}
+        {{- $total := add $published $plannedCount -}}
+        {{- $pct := 0 -}}
+        {{- if gt $total 0 }}{{ $pct = div (mul $published 100) $total }}{{ end -}}
+        <a class="home-side-project" href="{{ .RelPermalink }}">
+          <span class="home-side-project-name">{{ partial "utils/title" . }}</span>
+          <span class="home-side-project-meta">已发布 {{ $published }} / 规划 {{ $total }} 篇</span>
+          <span class="home-side-project-bar"><span class="home-side-project-bar-fill" style="width: {{ $pct }}%;"></span></span>
+        </a>
+      {{- end -}}
+    </section>
+
+    {{- /* 最近更新 */ -}}
+    {{- $recent := first 5 (sort site.RegularPages "Date" "desc") -}}
+    <section class="home-side-section">
+      <h3 class="home-side-title">最近更新</h3>
+      <ul class="home-side-list">
+        {{- range $recent -}}
+          <li><a class="home-side-link" href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a></li>
+        {{- end -}}
+      </ul>
+    </section>
+
+    {{- /* 标签 */ -}}
+    {{- with site.Taxonomies.tags -}}
+    <section class="home-side-section">
+      <h3 class="home-side-title">标签</h3>
+      <div class="home-side-tags">
+        {{- range .ByCount -}}
+          <a class="home-side-tag" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}<span class="home-side-tag-count">{{ .Count }}</span></a>
+        {{- end -}}
+      </div>
+    </section>
+    {{- end -}}
+  </div>
+</aside>

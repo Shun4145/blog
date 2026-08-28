@@ -1,0 +1,13 @@
+{{- /* 最新文章:按日期倒序取前 5 篇 */ -}}
+{{- $recent := first 5 (sort site.RegularPages "Date" "desc") -}}
+{{- with $recent -}}
+  <h2 class="hx:text-2xl hx:font-bold hx:mt-16 hx:mb-4">最近更新</h2>
+  <div class="home-post-grid">
+    {{- range . -}}
+      <a class="home-post-card" href="{{ .RelPermalink }}">
+        <span class="home-post-title">{{ partial "utils/title" . }}</span>
+        <span class="section-card-desc">{{ .Description | default .Summary | plainify | truncate 64 }}</span>
+      </a>
+    {{- end -}}
+  </div>
+{{- end -}}

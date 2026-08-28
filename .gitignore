@@ -1,0 +1,7 @@
+public/
+resources/
+.hugo_build.lock
+tools/
+*.log
+node_modules/
+public_bak_20260826/
