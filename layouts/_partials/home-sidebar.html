@@ -2,19 +2,19 @@
 {{- $currentSect := .FirstSection | default . -}}
 
 <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:sticky">
-  {{- /* 左栏顶部 section tabs:首页/Agent/RAG */ -}}
-  <nav class="hx:flex hx:gap-1 hx:overflow-x-auto hx:px-4 hx:pt-3 hx:border-b hx:border-gray-200 hx:dark:border-neutral-800">
+  {{- /* 移动端抽屉内的主导航:桌面端右上角已有,仅移动端显示 */ -}}
+  <ul class="hx:flex hx:flex-col hx:gap-1 hx:border-b hx:border-gray-200 hx:px-4 hx:pt-3 hx:pb-3 hx:dark:border-neutral-800 hx:md:hidden">
     {{- range site.Menus.main -}}
       {{- $mtype := .Params.type | default "" -}}
       {{- if or (eq $mtype "search") (eq $mtype "theme-toggle") (eq $mtype "language-switch") -}}{{- continue -}}{{- end -}}
       {{- $link := .URL -}}
       {{- with .PageRef -}}{{ if hasPrefix . "/" }}{{ $link = relLangURL (strings.TrimPrefix "/" .) }}{{ end }}{{ end -}}
       {{- $active := eq (strings.TrimSuffix "/" $currentSect.RelPermalink) (strings.TrimSuffix "/" $link) -}}
-      {{- $activeClass := cond $active "hx:border-primary-500 hx:text-primary-600 hx:font-medium hx:dark:border-primary-500 hx:dark:text-primary-600" "hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100" -}}
-      <a href="{{ $link }}" class="hx:inline-flex hx:-mb-px hx:shrink-0 hx:border-b-2 hx:px-2 hx:py-1.5 hx:text-sm hx:whitespace-nowrap hx:transition-colors {{ $activeClass }}"><span class="hx:text-center">{{ or (T .Identifier) .Name | safeHTML }}</span></a>
+      <li>
+        <a href="{{ $link }}" class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors {{ if $active }}hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:dark:bg-primary-400/10 hx:dark:text-primary-600{{ else }}hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50{{ end }}">{{ or (T .Identifier) .Name | safeHTML }}</a>
+      </li>
     {{- end -}}
-  </nav>
-
+  </ul>
   <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--hextra-navbar-height)-var(--menu-height))]">
     {{- /* 项目推进:每个栏目显示已发布/规划进度 */ -}}
     <section class="home-side-section">
@@ -35,8 +35,9 @@
       {{- end -}}
     </section>
 
-    {{- /* 最近更新 */ -}}
-    {{- $recent := first 5 (sort site.RegularPages "Date" "desc") -}}
+    {{- /* 最近更新:无日期字段,按文件名倒序取前 5 篇 */ -}}
+    {{- $all := partial "sort-pages-by-filename.html" (dict "pages" (where site.RegularPages "Params.excludeFromHome" "!=" true)) -}}
+    {{- $recent := first 5 (collections.Reverse $all) -}}
     <section class="home-side-section">
       <h3 class="home-side-title">最近更新</h3>
       <ul class="home-side-list">

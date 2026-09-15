@@ -2,7 +2,8 @@
 toc: true
 title: RAG 离线链路
 weight: 23
-tags: [RAG, 入门]
+tags: [RAG, Milvus, Embedding]
+description: 从文档加载、分块到向量入库，拆解 RAG 离线链路的每一步工程实现与常见踩坑。
 ---
 
 ## 一. 文档加载
@@ -230,4 +231,3 @@ Dense 向量维度：1024
 - Milvus Collection 同时保存 `sparse_vector` 和 `dense_vector`，这是后面 Hybrid Search 的数据基础
 - `AUTOINDEX` 与 `SPARSE_INVERTED_INDEX` 分别是 Dense 和 Sparse 向量在 Milvus Lite 上的常用索引
 - 更新知识时不能只替换原文件，必须重新切分、重新向量化并更新 Collection
-

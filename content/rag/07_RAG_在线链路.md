@@ -2,7 +2,8 @@
 toc: true
 title: RAG 在线链路
 weight: 24
-tags: [RAG, 入门]
+tags: [RAG, Milvus, 混合检索, 重排]
+description: Dense + Sparse 混合检索、Reranker 精排与流式生成，覆盖 RAG 在线链路的完整实战。
 ---
 
 ## 在线链路实战：混合检索、Reranker 精排与流式生成
@@ -183,4 +184,3 @@ answer("新员工入职满一年能休几天年假？")
 - `stream=True` 开启流式输出，`incremental_output=True` 让每个分片只包含新增文本
 - 最终返回的 `answer_text` 是完整答案，可保存到数据库或返回给前端
 - 如果希望答案严格可溯源，可以把 `[编号]` 解析出来，再映射到原始文档页码或文件路径
-

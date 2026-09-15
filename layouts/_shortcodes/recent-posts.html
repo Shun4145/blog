@@ -1,5 +1,6 @@
-{{- /* 最新文章:按日期倒序取前 5 篇 */ -}}
-{{- $recent := first 5 (sort site.RegularPages "Date" "desc") -}}
+{{- /* 最新文章:无日期字段,按文件名倒序取前 5 篇 */ -}}
+{{- $all := partial "sort-pages-by-filename.html" (dict "pages" site.RegularPages) -}}
+{{- $recent := first 5 (collections.Reverse $all) -}}
 {{- with $recent -}}
   <h2 class="hx:text-2xl hx:font-bold hx:mt-16 hx:mb-4">最近更新</h2>
   <div class="home-post-grid">

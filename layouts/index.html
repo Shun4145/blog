@@ -1,0 +1,151 @@
+{{ define "main" }}
+  {{- /* 精选文章:front matter 标记 featured: true,不足两篇时用文章列表补齐 */ -}}
+  {{- $featured := where site.RegularPages "Params.featured" true -}}
+  {{- if lt (len $featured) 2 -}}
+    {{- $all := partial "sort-pages-by-filename.html" (dict "pages" site.RegularPages) -}}
+    {{- $fill := first (sub 2 (len $featured)) $all -}}
+    {{- range $fill -}}
+      {{- $featured = $featured | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $featured = first 2 $featured -}}
+
+  {{- /* 最近更新:无日期字段,按文件名倒序取前 3 篇 */ -}}
+  {{- $all := partial "sort-pages-by-filename.html" (dict "pages" (where site.RegularPages "Params.excludeFromHome" "!=" true)) -}}
+  {{- $recent := first 3 (collections.Reverse $all) -}}
+
+  <div class="hx:mx-auto hx:flex hextra-max-page-width">
+    {{- /* 移动端菜单:桌面隐藏,汉堡按钮展开抽屉 */ -}}
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
+
+    <main id="content" class="hx:w-full hx:min-w-0 hx:break-words">
+      <div class="new-home">
+        <div class="nh-home-layout">
+          <div class="nh-home-main">
+            <section class="nh-hero">
+              <p class="nh-eyebrow">Developer / Writer / Builder</p>
+              <h1 class="nh-title">与概率同行，为结果负责</h1>
+              <p class="nh-lead">
+                你好，我是 Shun，一名大模型应用开发工程师。专注 Agent 与 RAG 两大核心范式，关注可靠的工程落地与有温度的产品体验。这里收集技术笔记、项目复盘与工程实践。
+              </p>
+              <div class="nh-actions">
+                <a class="nh-btn nh-btn-primary" href="{{ relLangURL "articles/" }}">浏览全部文章</a>
+                <a class="nh-btn nh-btn-outline" href="{{ relLangURL "tags/" }}">按标签浏览</a>
+              </div>
+            </section>
+
+        <section class="nh-section">
+          <header class="nh-section-head">
+            <h2>精选文章</h2>
+            <p>围绕工程质量、产品体验和持续创作的深入记录。</p>
+          </header>
+          <div class="nh-grid nh-grid-2">
+            {{- range $featured -}}
+              <a class="nh-card nh-card-post" href="{{ .RelPermalink }}">
+                <h3>{{ partial "utils/title" . }}</h3>
+                <p>{{ .Description | default (.Summary | plainify) | truncate 90 }}</p>
+              </a>
+            {{- end -}}
+          </div>
+        </section>
+
+        <section class="nh-section">
+          <header class="nh-section-head">
+            <h2>最近更新</h2>
+            <p>按时间持续整理的短笔记、实践记录与阶段性复盘。</p>
+          </header>
+          <div class="nh-list">
+            {{- range $recent -}}
+              <a class="nh-list-item" href="{{ .RelPermalink }}">
+                <span class="nh-list-item-body">
+                  <h3 class="nh-list-item-title">{{ partial "utils/title" . }}</h3>
+                  <span class="nh-list-item-desc">{{ .Description | default (.Summary | plainify) | truncate 90 }}</span>
+                </span>
+                <span class="nh-list-item-arrow" aria-hidden="true">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                </span>
+              </a>
+            {{- end -}}
+          </div>
+          <a class="nh-more-link" href="{{ relLangURL "articles/" }}">查看全部文章
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3" /></svg>
+          </a>
+        </section>
+
+        <section class="nh-section">
+          <header class="nh-section-head">
+            <h2>精选项目</h2>
+            <p>从真实问题出发，兼顾工程质量、可用性与视觉细节。</p>
+          </header>
+          {{ partial "projects.html" . }}
+          <a class="nh-more-link" href="{{ relLangURL "projects/" }}">查看所有项目
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" focusable="false"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3" /></svg>
+          </a>
+        </section>
+
+        <section class="nh-cta">
+          <h2>一起交换想法，或者做点有趣的事。</h2>
+          <div class="nh-cta-links">
+            <a href="mailto:shun764145@gmail.com" rel="noopener">
+              {{- partial "utils/icon.html" (dict "name" "mail" "attributes" `height=1.1em class="nh-cta-icon"`) -}}
+              <span>shun764145@gmail.com</span>
+            </a>
+            <a href="https://github.com/Shun4145" target="_blank" rel="noopener noreferrer">
+              {{- partial "utils/icon.html" (dict "name" "github" "attributes" `height=1.1em class="nh-cta-icon"`) -}}
+              <span>GitHub</span>
+            </a>
+          </div>
+        </section>
+          </div>
+
+          <aside class="nh-home-aside" aria-label="首页辅助信息">
+            <section class="nh-rail-section">
+              <h2>关于我</h2>
+              <p>专注 Agent 与 RAG 工程落地，记录从原型到可靠系统的设计、评测与实践。</p>
+              <div class="nh-rail-chips">
+                <span>Agent</span>
+                <span>RAG</span>
+                <span>LLM 工程</span>
+              </div>
+            </section>
+
+            <section class="nh-rail-section">
+              <h2>知识库进度</h2>
+              <div class="nh-rail-progress-list">
+                {{- range site.Sections -}}
+                  {{- if not .RegularPages }}{{ continue }}{{ end -}}
+                  {{- $published := len .RegularPages -}}
+                  {{- $plannedCount := 0 -}}
+                  {{- with .Params.planned }}{{ $plannedCount = len . }}{{ end -}}
+                  {{- $total := add $published $plannedCount -}}
+                  {{- $pct := 0 -}}
+                  {{- if gt $total 0 }}{{ $pct = div (mul $published 100) $total }}{{ end -}}
+                  <a class="nh-rail-progress" href="{{ .RelPermalink }}">
+                    <span class="nh-rail-progress-head">
+                      <span>{{ partial "utils/title" . }}</span>
+                      <span>{{ $published }} / {{ $total }}</span>
+                    </span>
+                    <span class="nh-rail-progress-bar" aria-hidden="true">
+                      <span class="nh-rail-progress-fill" style="width: {{ $pct }}%;"></span>
+                    </span>
+                  </a>
+                {{- end -}}
+              </div>
+            </section>
+
+            {{- with site.Taxonomies.tags }}
+            <section class="nh-rail-section">
+              <h2>常用标签</h2>
+              <div class="nh-rail-tags">
+                {{- range first 8 .ByCount -}}
+                  <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}<span>{{ .Count }}</span></a>
+                {{- end -}}
+              </div>
+            </section>
+            {{- end }}
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+{{ end }}

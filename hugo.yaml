@@ -4,6 +4,11 @@ theme: "hextra"
 enableRobotsTXT: true
 defaultContentLanguage: "zh-cn"
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 params:
   description: "Agent 与 RAG 技术笔记"
   page:
@@ -13,8 +18,8 @@ params:
     displayTitle: true
     displayLogo: true
     logo:
-      path: images/logo.svg
-      dark: images/logo-dark.svg
+      path: images/logo-g.svg
+      dark: images/logo-g-dark.svg
       width: 26
       height: 26
   search:
@@ -26,7 +31,7 @@ params:
     displayCopyright: true
     width: wide
   theme:
-    displayToggle: false
+    displayToggle: true
   mermaid:
     js: js/mermaid.min.js
 
@@ -36,22 +41,19 @@ menu:
       name: 首页
       pageRef: /
       weight: 10
-    - identifier: agent
-      name: Agent
-      pageRef: /agent
+    - identifier: articles
+      name: 文章
+      pageRef: /articles
       weight: 20
-    - identifier: rag
-      name: RAG
-      pageRef: /rag
+    - identifier: projects
+      name: 项目
+      pageRef: /projects
       weight: 30
-    - identifier: search
-      name: 搜索
-      params:
-        type: search
-        icon: search
+    - identifier: about
+      name: 关于
+      pageRef: /about
       weight: 40
     - identifier: theme-toggle
-      name: 主题切换
       params:
         type: theme-toggle
       weight: 50

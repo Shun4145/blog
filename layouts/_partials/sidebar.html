@@ -21,19 +21,6 @@
 {{- end -}}
 
 <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-[var(--hextra-navbar-height)] hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] {{ $sidebarClass }}">
-  {{- /* 左栏顶部 section tabs:首页/Agent/RAG */ -}}
-  {{- $currentSect := $context.FirstSection | default $context -}}
-  <nav class="hx:flex hx:gap-1 hx:overflow-x-auto hx:px-4 hx:pt-3 hx:border-b hx:border-gray-200 hx:dark:border-neutral-800">
-    {{- range site.Menus.main -}}
-      {{- $mtype := .Params.type | default "" -}}
-      {{- if or (eq $mtype "search") (eq $mtype "theme-toggle") (eq $mtype "language-switch") -}}{{- continue -}}{{- end -}}
-      {{- $link := .URL -}}
-      {{- with .PageRef -}}{{ if hasPrefix . "/" }}{{ $link = relLangURL (strings.TrimPrefix "/" .) }}{{ end }}{{ end -}}
-      {{- $active := eq (strings.TrimSuffix "/" $currentSect.RelPermalink) (strings.TrimSuffix "/" $link) -}}
-      {{- $activeClass := cond $active "hx:border-primary-500 hx:text-primary-600 hx:font-medium hx:dark:border-primary-500 hx:dark:text-primary-600" "hx:border-transparent hx:text-gray-600 hx:hover:border-gray-200 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100" -}}
-      <a href="{{ $link }}" class="hx:inline-flex hx:-mb-px hx:shrink-0 hx:border-b-2 hx:px-2 hx:py-1.5 hx:text-sm hx:whitespace-nowrap hx:transition-colors {{ $activeClass }}"><span class="hx:text-center">{{ or (T .Identifier) .Name | safeHTML }}</span></a>
-    {{- end -}}
-  </nav>
   <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--hextra-navbar-height)-var(--menu-height))]">
     <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
       <!-- Nav -->
@@ -52,20 +39,12 @@
       </ul>
     {{ end -}}
   </div>
-  {{/* Hide theme switch when sidebar is disabled */}}
+  {{/* Keep the footer language switch when the site is multilingual. */}}
   {{ $switchesClass := cond $disableSidebar "hx:md:hidden" "" -}}
-  {{ $displayThemeToggle := (site.Params.theme.displayToggle | default true) -}}
 
-  {{ if or hugo.IsMultilingual $displayThemeToggle }}
+  {{ if hugo.IsMultilingual }}
     <div class="{{ $switchesClass }} {{ with hugo.IsMultilingual }}hx:justify-end{{ end }} hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show">
-      {{- with hugo.IsMultilingual -}}
-        {{- partial "language-switch" (dict "context" $context "grow" true) -}}
-        {{- with $displayThemeToggle }}{{ partial "theme-toggle" (dict "hideLabel" true "location" "bottom-right") }}{{ end -}}
-      {{- else -}}
-        {{- with $displayThemeToggle -}}
-          <div class="hx:flex hx:grow hx:flex-col">{{ partial "theme-toggle" }}</div>
-        {{- end -}}
-      {{- end -}}
+      {{- partial "language-switch" (dict "context" $context "grow" true) -}}
     </div>
   {{- end -}}
 </aside>

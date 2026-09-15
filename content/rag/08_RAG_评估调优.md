@@ -2,7 +2,9 @@
 toc: true
 title: RAG 效果评估与调优
 weight: 25
-tags: [RAG, 入门]
+tags: [RAG, 评估, LangSmith]
+description: 从检索侧到生成侧的评估指标与调优路径，用数据驱动 RAG 系统的持续改进。
+featured: true
 ---
 
 ## 1. 检索侧指标

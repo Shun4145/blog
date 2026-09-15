@@ -2,7 +2,9 @@
 toc: true
 title: RAG 核心概念
 weight: 21
-tags: [RAG, 入门]
+tags: [RAG, Embedding]
+description: 从检索增强生成的核心思想出发，梳理 RAG 系统的两条关键链路，理解它如何缓解幻觉、让答案可溯源。
+featured: true
 ---
 ---
 ## 1. 什么是 RAG（检索增强生成）

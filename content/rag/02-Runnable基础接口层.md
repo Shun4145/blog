@@ -2,7 +2,7 @@
 toc: true
 title: 基础接口层
 weight: 24
-tags: [RAG, 入门,LangChain]
+tags: [RAG, LangChain]
 ---
 
 > 一句话总结：Runnable 是 LangChain 所有组件的统一接口协议，让 Prompt、LLM、Parser、Retriever 等组件可以用同一套方式调用、组合和扩展。

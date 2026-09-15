@@ -1,5 +1,5 @@
 ---
-title: 检索增强生成（RAG）技术笔记
+title: RAG技术笔记
 planned:
   - 持续更新中
 cascade:

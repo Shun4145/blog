@@ -2,7 +2,7 @@
 toc: true
 title: 文档处理与对话历史
 weight: 24
-tags: [RAG, 入门,LangChain]
+tags: [RAG, LangChain, Milvus]
 ---
 
 > 一句话总结：Loader、Splitter、VectorStore 负责把外部文档变成可检索的向量记忆，History 负责保存和读取多轮对话，让模型回答具备“知识”和“上下文”。
