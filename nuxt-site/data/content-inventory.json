@@ -1,0 +1,686 @@
+{
+  "generatedAt": "2026-09-29T11:57:50.574Z",
+  "counts": {
+    "articles": 12,
+    "projectChapters": 8,
+    "pages": 8
+  },
+  "entries": [
+    {
+      "source": "content/about/_index.md",
+      "title": "关于",
+      "description": "",
+      "path": "/about/",
+      "section": "about",
+      "kind": "page",
+      "date": null,
+      "lastmod": null,
+      "tags": [],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/about/index.md",
+      "weight": 0
+    },
+    {
+      "source": "content/agent/01-FunctionCall函数调用.md",
+      "title": "Function Call：让大模型学会调用外部工具",
+      "description": "从“客服查快递”讲清 Function Call 的工作机制，再用文本小工具示例对比 JSON Schema、@tool 装饰器与 Pydantic 三种工具定义方式。",
+      "path": "/agent/01-functioncall%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8/",
+      "section": "agent",
+      "kind": "article",
+      "date": "2026-06-02",
+      "lastmod": "2026-06-02",
+      "tags": [
+        "Agent",
+        "Function Call",
+        "工具调用"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": true
+      },
+      "file": "notes/agent/01-FunctionCall函数调用.md",
+      "weight": 20
+    },
+    {
+      "source": "content/agent/02-MCP协议.md",
+      "title": "MCP 协议：给大模型的工具装一个「Type-C 接口」",
+      "description": "从“每接一个接口都要手写一份描述”的接口混乱讲起，理清 MCP 的 Host / Client / Server 三层架构与调用流程，并对比 stdio、SSE、Streamable HTTP 三种传输方式。",
+      "path": "/agent/02-mcp%E5%8D%8F%E8%AE%AE/",
+      "section": "agent",
+      "kind": "article",
+      "date": "2026-06-16",
+      "lastmod": "2026-06-16",
+      "tags": [
+        "Agent",
+        "MCP",
+        "协议"
+      ],
+      "featured": true,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": true
+      },
+      "file": "notes/agent/02-MCP协议.md",
+      "weight": 21
+    },
+    {
+      "source": "content/agent/03-Agent智能体.md",
+      "title": "Agent 智能体：从工具调用到多智能体协作的五种模式",
+      "description": "用一个“筹备生日派对”的例子讲清 Agent 与普通 LLM 的差别，梳理 Agentic 的能力梯度，并逐一拆解工具使用、ReAct、反思、规划、多智能体五种模式。",
+      "path": "/agent/03-agent%E6%99%BA%E8%83%BD%E4%BD%93/",
+      "section": "agent",
+      "kind": "article",
+      "date": "2026-06-30",
+      "lastmod": "2026-06-30",
+      "tags": [
+        "Agent",
+        "ReAct",
+        "多智能体"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": true
+      },
+      "file": "notes/agent/03-Agent智能体.md",
+      "weight": 22
+    },
+    {
+      "source": "content/agent/04-A2A协议.md",
+      "title": "A2A 协议：让多个 Agent 像同事一样协作",
+      "description": "从 Function Call → MCP → Agent → A2A 的四层技术演进讲起，拆解 AgentCard、Task、Artifact、TaskState 等核心概念，并跑通串行编排与多意图并行两条实战链路。",
+      "path": "/agent/04-a2a%E5%8D%8F%E8%AE%AE/",
+      "section": "agent",
+      "kind": "article",
+      "date": "2026-07-14",
+      "lastmod": "2026-07-14",
+      "tags": [
+        "Agent",
+        "A2A",
+        "多智能体"
+      ],
+      "featured": true,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": true
+      },
+      "file": "notes/agent/04-A2A协议.md",
+      "weight": 23
+    },
+    {
+      "source": "content/agent/_index.md",
+      "title": "Agent 技术笔记",
+      "description": "",
+      "path": "/agent/",
+      "section": "agent",
+      "kind": "page",
+      "date": null,
+      "lastmod": null,
+      "tags": [],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/agent/index.md",
+      "weight": 0
+    },
+    {
+      "source": "content/articles/_index.md",
+      "title": "文章",
+      "description": "",
+      "path": "/articles/",
+      "section": "articles",
+      "kind": "page",
+      "date": null,
+      "lastmod": null,
+      "tags": [],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/articles/index.md",
+      "weight": 0
+    },
+    {
+      "source": "content/_index.md",
+      "title": "首页",
+      "description": "",
+      "path": "/",
+      "section": "",
+      "kind": "page",
+      "date": null,
+      "lastmod": null,
+      "tags": [],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/index.md",
+      "weight": 0
+    },
+    {
+      "source": "content/projects/_index.md",
+      "title": "项目",
+      "description": "",
+      "path": "/projects/",
+      "section": "projects",
+      "kind": "page",
+      "date": null,
+      "lastmod": null,
+      "tags": [],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/index.md",
+      "weight": 0
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/01-架构总览与阅读地图.md",
+      "title": "企业级 RAG 平台架构：一次提问背后的完整链路",
+      "description": "从数据契约到评测门禁，梳理企业内部知识问答系统一次提问背后的完整工程链路。",
+      "path": "/projects/rag-knowledge-base/01-%E6%9E%B6%E6%9E%84%E6%80%BB%E8%A7%88%E4%B8%8E%E9%98%85%E8%AF%BB%E5%9C%B0%E5%9B%BE/",
+      "section": "projects",
+      "kind": "project-chapter",
+      "date": "2026-05-29",
+      "lastmod": "2026-05-29",
+      "tags": [
+        "RAG",
+        "LangChain",
+        "Milvus",
+        "FastAPI"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/01-架构总览与阅读地图.md",
+      "weight": 31
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/02-环境搭建与启动预热.md",
+      "title": "RAG 环境搭建：六个容器与启动预热",
+      "description": "说明 FastAPI、MySQL、Redis、Milvus、etcd 与 MinIO 的职责，以及服务启动时需要完成的预热校验。",
+      "path": "/projects/rag-knowledge-base/02-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E5%90%AF%E5%8A%A8%E9%A2%84%E7%83%AD/",
+      "section": "projects",
+      "kind": "project-chapter",
+      "date": "2026-06-05",
+      "lastmod": "2026-06-05",
+      "tags": [
+        "RAG",
+        "Docker",
+        "Milvus",
+        "FastAPI"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/02-环境搭建与启动预热.md",
+      "weight": 32
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/03-知识入库与增量指纹.md",
+      "title": "知识入库与增量指纹",
+      "description": "通过数据契约、两级切分、内容指纹与质量门禁，构建可增量更新的企业知识入库链路。",
+      "path": "/projects/rag-knowledge-base/03-%E7%9F%A5%E8%AF%86%E5%85%A5%E5%BA%93%E4%B8%8E%E5%A2%9E%E9%87%8F%E6%8C%87%E7%BA%B9/",
+      "section": "projects",
+      "kind": "project-chapter",
+      "date": "2026-06-12",
+      "lastmod": "2026-06-12",
+      "tags": [
+        "RAG",
+        "Milvus",
+        "Embedding"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/03-知识入库与增量指纹.md",
+      "weight": 33
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/04-意图识别与检索策略.md",
+      "title": "意图识别与检索策略",
+      "description": "使用规则候选、分类模型与网关仲裁，把用户问题转换为可解释、可治理的检索计划。",
+      "path": "/projects/rag-knowledge-base/04-%E6%84%8F%E5%9B%BE%E8%AF%86%E5%88%AB%E4%B8%8E%E6%A3%80%E7%B4%A2%E7%AD%96%E7%95%A5/",
+      "section": "projects",
+      "kind": "project-chapter",
+      "date": "2026-06-19",
+      "lastmod": "2026-06-19",
+      "tags": [
+        "RAG",
+        "意图识别",
+        "混合检索"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/04-意图识别与检索策略.md",
+      "weight": 34
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/05-Milvus混合检索与重排.md",
+      "title": "Milvus 混合检索与重排",
+      "description": "组合 Dense、Sparse 与 CrossEncoder，兼顾语义召回、精确匹配和候选结果精排。",
+      "path": "/projects/rag-knowledge-base/05-milvus%E6%B7%B7%E5%90%88%E6%A3%80%E7%B4%A2%E4%B8%8E%E9%87%8D%E6%8E%92/",
+      "section": "projects",
+      "kind": "project-chapter",
+      "date": "2026-06-26",
+      "lastmod": "2026-06-26",
+      "tags": [
+        "RAG",
+        "Milvus",
+        "混合检索",
+        "重排"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/05-Milvus混合检索与重排.md",
+      "weight": 35
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/06-主链路编排与置信度.md",
+      "title": "主链路编排与答案置信度",
+      "description": "拆分 API、QAService 与 Pipeline 的职责，并通过置信度、引用和降级策略控制错误答案风险。",
+      "path": "/projects/rag-knowledge-base/06-%E4%B8%BB%E9%93%BE%E8%B7%AF%E7%BC%96%E6%8E%92%E4%B8%8E%E7%BD%AE%E4%BF%A1%E5%BA%A6/",
+      "section": "projects",
+      "kind": "project-chapter",
+      "date": "2026-07-03",
+      "lastmod": "2026-07-03",
+      "tags": [
+        "RAG",
+        "Prompt",
+        "意图识别"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/06-主链路编排与置信度.md",
+      "weight": 36
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/07-缓存版本与隔离.md",
+      "title": "缓存、知识库版本与数据隔离",
+      "description": "设计两级缓存、版本状态机与租户隔离，避免重复计算、旧数据污染和跨域检索。",
+      "path": "/projects/rag-knowledge-base/07-%E7%BC%93%E5%AD%98%E7%89%88%E6%9C%AC%E4%B8%8E%E9%9A%94%E7%A6%BB/",
+      "section": "projects",
+      "kind": "project-chapter",
+      "date": "2026-07-10",
+      "lastmod": "2026-07-10",
+      "tags": [
+        "RAG",
+        "Redis",
+        "MySQL"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/07-缓存版本与隔离.md",
+      "weight": 37
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/08-质量门禁与评测闭环.md",
+      "title": "质量门禁与评测闭环",
+      "description": "用入库、效果、性能三类门禁和线上错例回流，建立 RAG 系统持续评测与发布验收闭环。",
+      "path": "/projects/rag-knowledge-base/08-%E8%B4%A8%E9%87%8F%E9%97%A8%E7%A6%81%E4%B8%8E%E8%AF%84%E6%B5%8B%E9%97%AD%E7%8E%AF/",
+      "section": "projects",
+      "kind": "project-chapter",
+      "date": "2026-07-17",
+      "lastmod": "2026-07-17",
+      "tags": [
+        "RAG",
+        "评估",
+        "MySQL"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/08-质量门禁与评测闭环.md",
+      "weight": 38
+    },
+    {
+      "source": "content/projects/rag-knowledge-base/_index.md",
+      "title": "企业内部知识问答助手",
+      "description": "企业级 RAG 知识问答项目，覆盖数据入库、意图路由、混合检索、答案生成、缓存隔离与质量评测。",
+      "path": "/projects/rag-knowledge-base/",
+      "section": "projects",
+      "kind": "page",
+      "date": null,
+      "lastmod": null,
+      "tags": [],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/projects/rag-knowledge-base/index.md",
+      "weight": 0
+    },
+    {
+      "source": "content/rag/01_RAG基础_核心概念.md",
+      "title": "RAG 核心概念",
+      "description": "从检索增强生成的核心思想出发，梳理 RAG 系统的两条关键链路，理解它如何缓解幻觉、让答案可溯源。",
+      "path": "/rag/01_rag%E5%9F%BA%E7%A1%80_%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/",
+      "section": "rag",
+      "kind": "article",
+      "date": "2026-04-07",
+      "lastmod": "2026-04-07",
+      "tags": [
+        "RAG",
+        "Embedding"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": true
+      },
+      "file": "notes/rag/01_RAG基础_核心概念.md",
+      "weight": 21
+    },
+    {
+      "source": "content/rag/02-Runnable基础接口层.md",
+      "title": "基础接口层",
+      "description": "理解 LangChain Runnable 统一接口，以及同步、异步、流式、批量、重试与回退等核心调用方式。",
+      "path": "/rag/02-runnable%E5%9F%BA%E7%A1%80%E6%8E%A5%E5%8F%A3%E5%B1%82/",
+      "section": "rag",
+      "kind": "article",
+      "date": "2026-04-14",
+      "lastmod": "2026-04-14",
+      "tags": [
+        "RAG",
+        "LangChain"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/rag/02-Runnable基础接口层.md",
+      "weight": 24
+    },
+    {
+      "source": "content/rag/03_核心抽象层.md",
+      "title": "RAG 核心抽象层：Messages、Prompt、Parser",
+      "description": "梳理 LangChain 中 Messages、Prompt 与 Parser 三类核心抽象，并通过完整链路理解它们如何协作。",
+      "path": "/rag/03_%E6%A0%B8%E5%BF%83%E6%8A%BD%E8%B1%A1%E5%B1%82/",
+      "section": "rag",
+      "kind": "article",
+      "date": "2026-04-21",
+      "lastmod": "2026-04-21",
+      "tags": [
+        "RAG",
+        "LangChain",
+        "Prompt"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/rag/03_核心抽象层.md",
+      "weight": 24
+    },
+    {
+      "source": "content/rag/04_LangChain-文档处理与对话历史.md",
+      "title": "文档处理与对话历史",
+      "description": "从文档加载、文本切分、向量存储到对话历史，串起 RAG 数据处理与多轮上下文的基础组件。",
+      "path": "/rag/04_langchain-%E6%96%87%E6%A1%A3%E5%A4%84%E7%90%86%E4%B8%8E%E5%AF%B9%E8%AF%9D%E5%8E%86%E5%8F%B2/",
+      "section": "rag",
+      "kind": "article",
+      "date": "2026-04-28",
+      "lastmod": "2026-04-28",
+      "tags": [
+        "RAG",
+        "LangChain",
+        "Milvus"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/rag/04_LangChain-文档处理与对话历史.md",
+      "weight": 24
+    },
+    {
+      "source": "content/rag/05_智能体工具与中间件.md",
+      "title": "Tools、create_agent 与 Middleware",
+      "description": "介绍 LangChain v1.0 的工具定义、create_agent 创建流程与 Middleware 扩展机制。",
+      "path": "/rag/05_%E6%99%BA%E8%83%BD%E4%BD%93%E5%B7%A5%E5%85%B7%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/",
+      "section": "rag",
+      "kind": "article",
+      "date": "2026-05-05",
+      "lastmod": "2026-05-05",
+      "tags": [
+        "LangChain",
+        "Agent",
+        "工具调用"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/rag/05_智能体工具与中间件.md",
+      "weight": 24
+    },
+    {
+      "source": "content/rag/06_RAG_离线链路.md",
+      "title": "RAG 离线链路",
+      "description": "从文档加载、分块到向量入库，拆解 RAG 离线链路的每一步工程实现与常见踩坑。",
+      "path": "/rag/06_rag_%E7%A6%BB%E7%BA%BF%E9%93%BE%E8%B7%AF/",
+      "section": "rag",
+      "kind": "article",
+      "date": "2026-05-12",
+      "lastmod": "2026-05-12",
+      "tags": [
+        "RAG",
+        "Milvus",
+        "Embedding"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/rag/06_RAG_离线链路.md",
+      "weight": 23
+    },
+    {
+      "source": "content/rag/07_RAG_在线链路.md",
+      "title": "RAG 在线链路",
+      "description": "Dense + Sparse 混合检索、Reranker 精排与流式生成，覆盖 RAG 在线链路的完整实战。",
+      "path": "/rag/07_rag_%E5%9C%A8%E7%BA%BF%E9%93%BE%E8%B7%AF/",
+      "section": "rag",
+      "kind": "article",
+      "date": "2026-05-19",
+      "lastmod": "2026-05-19",
+      "tags": [
+        "RAG",
+        "Milvus",
+        "混合检索",
+        "重排"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/rag/07_RAG_在线链路.md",
+      "weight": 24
+    },
+    {
+      "source": "content/rag/08_RAG_评估调优.md",
+      "title": "RAG 效果评估与调优",
+      "description": "从检索侧到生成侧的评估指标与调优路径，用数据驱动 RAG 系统的持续改进。",
+      "path": "/rag/08_rag_%E8%AF%84%E4%BC%B0%E8%B0%83%E4%BC%98/",
+      "section": "rag",
+      "kind": "article",
+      "date": "2026-05-26",
+      "lastmod": "2026-05-26",
+      "tags": [
+        "RAG",
+        "评估",
+        "LangSmith"
+      ],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/rag/08_RAG_评估调优.md",
+      "weight": 25
+    },
+    {
+      "source": "content/rag/_index.md",
+      "title": "RAG 技术笔记",
+      "description": "",
+      "path": "/rag/",
+      "section": "rag",
+      "kind": "page",
+      "date": null,
+      "lastmod": null,
+      "tags": [],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/rag/index.md",
+      "weight": 0
+    },
+    {
+      "source": "content/tags/_index.md",
+      "title": "标签",
+      "description": "",
+      "path": "/tags/",
+      "section": "tags",
+      "kind": "page",
+      "date": null,
+      "lastmod": null,
+      "tags": [],
+      "featured": false,
+      "draft": false,
+      "compatibility": {
+        "shortcodes": [],
+        "rawHtml": false,
+        "mermaid": false
+      },
+      "file": "notes/tags/index.md",
+      "weight": 0
+    }
+  ],
+  "migration": {
+    "generator": "nuxt-site/scripts/migrate-content.mjs",
+    "linkRepairs": [
+      {
+        "source": "content/rag/07_RAG_在线链路.md",
+        "line": 17,
+        "originalTarget": "01_RAG基础_环境准备.md",
+        "reason": "missing-source-no-fabricated-link",
+        "original": "- 已按 [RAG基础_环境准备](01_RAG基础_环境准备.md) 配置 `DASHSCOPE_API_KEY`",
+        "replacement": "- 已在运行环境中配置 `DASHSCOPE_API_KEY`"
+      },
+      {
+        "source": "content/rag/07_RAG_在线链路.md",
+        "line": 16,
+        "originalTarget": "01_RAG基础_离线链路.md",
+        "correctedSource": "content/rag/06_RAG_离线链路.md",
+        "path": "/rag/06_rag_%E7%A6%BB%E7%BA%BF%E9%93%BE%E8%B7%AF/"
+      }
+    ],
+    "bodyRepairs": [
+      {
+        "source": "content/about/_index.md",
+        "reason": "about-heading-h1-to-h2",
+        "original": "# 关于我",
+        "replacement": "## 关于我"
+      },
+      {
+        "source": "content/projects/rag-knowledge-base/01-架构总览与阅读地图.md",
+        "reason": "remove-unclosed-fence-before-series-prose",
+        "original": "```",
+        "replacement": ""
+      }
+    ]
+  }
+}

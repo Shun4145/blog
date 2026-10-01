@@ -1,6 +1,0 @@
-{{- $page := . -}}
-{{- with $page.Params.tags -}}
-  <div class="hx:mt-8 hx:pt-4 hx:border-t hx:border-gray-100 hx:dark:border-neutral-800">
-    {{- partial "tags.html" (dict "context" $page) -}}
-  </div>
-{{- end -}}

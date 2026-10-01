@@ -1,0 +1,31 @@
+{
+  "name": "shun-personal-site",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "scripts": {
+    "dev": "nuxt dev --host 127.0.0.1 --port 1313",
+    "build": "nuxt build",
+    "generate": "npm run inventory && nuxt generate && node scripts/write-site-files.mjs",
+    "preview": "nuxt preview --host 127.0.0.1 --port 3000",
+    "preview:static": "node scripts/preview-static.mjs",
+    "check:static": "node scripts/check-static.mjs",
+    "postinstall": "nuxt prepare",
+    "inventory": "node scripts/sync-content.mjs",
+    "check:mermaid": "node scripts/check-mermaid.mjs",
+    "check:search": "node scripts/check-header-search.mjs"
+  },
+  "dependencies": {
+    "@nuxt/content": "3.16.1",
+    "nuxt": "4.5.2",
+    "vue": "^3.5.0",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "typescript": "^5.9.0",
+    "yaml": "^2.8.0"
+  }
+}

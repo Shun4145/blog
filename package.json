@@ -1,0 +1,12 @@
+{
+  "name": "shun-blog-workspace",
+  "private": true,
+  "scripts": {
+    "setup": "npm --prefix nuxt-site ci",
+    "dev": "npm --prefix nuxt-site run dev",
+    "generate": "npm --prefix nuxt-site run generate",
+    "check": "npm --prefix nuxt-site run check:static && npm --prefix nuxt-site run check:mermaid && npm --prefix nuxt-site run check:search",
+    "inventory": "npm --prefix nuxt-site run inventory",
+    "preview": "npm --prefix nuxt-site run preview:static"
+  }
+}

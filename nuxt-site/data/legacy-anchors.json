@@ -1,0 +1,504 @@
+{
+  "/agent/01-functioncall函数调用": {
+    "_1-什么是-function-call": [
+      "1-什么是-function-call"
+    ],
+    "_11-从一个生活场景说起": [
+      "11-从一个生活场景说起"
+    ],
+    "_12-更多生活中的-function-call": [
+      "12-更多生活中的-function-call"
+    ],
+    "_13-function-call-解决了什么问题": [
+      "13-function-call-解决了什么问题"
+    ],
+    "_14-function-call-的正式定义": [
+      "14-function-call-的正式定义"
+    ],
+    "_2-function-call-工作原理": [
+      "2-function-call-工作原理"
+    ],
+    "_3-function-call-使用方式": [
+      "3-function-call-使用方式"
+    ],
+    "_31-自定义-tool-结构": [
+      "31-自定义-tool-结构"
+    ],
+    "_311-导包": [
+      "311-导包"
+    ],
+    "_312-定义外部函数": [
+      "312-定义外部函数"
+    ],
+    "_313-描述函数功能": [
+      "313-描述函数功能"
+    ],
+    "_314-模型实例化": [
+      "314-模型实例化"
+    ],
+    "_315-模型调用": [
+      "315-模型调用"
+    ],
+    "_316-完整代码": [
+      "316-完整代码"
+    ],
+    "_32-装饰器-tool-方式": [
+      "32-装饰器-tool-方式"
+    ],
+    "_33-pydantic-的-tool-方式": [
+      "33-pydantic-的-tool-方式"
+    ],
+    "_34-三种定义方式对比": [
+      "34-三种定义方式对比"
+    ],
+    "_4-agent-调用-tool": [
+      "4-agent-调用-tool"
+    ],
+    "_5-本节小结": [
+      "5-本节小结"
+    ]
+  },
+  "/agent/02-mcp协议": {
+    "_1-背景": [
+      "1-背景"
+    ],
+    "_11-从一个生活场景说起": [
+      "11-从一个生活场景说起"
+    ],
+    "_12-有了-mcp-之前-vs-有了-mcp-之后": [
+      "12-有了-mcp-之前-vs-有了-mcp-之后"
+    ],
+    "_13-更多场景mcp-在真实业务中的价值": [
+      "13-更多场景mcp-在真实业务中的价值"
+    ],
+    "_2-什么是-mcp-协议": [
+      "2-什么是-mcp-协议"
+    ],
+    "_21-mcp-核心架构": [
+      "21-mcp-核心架构"
+    ],
+    "_22-mcp-工具调用流程": [
+      "22-mcp-工具调用流程"
+    ],
+    "_23-mcp-的通信传输方式": [
+      "23-mcp-的通信传输方式"
+    ],
+    "_24-mcp-与-function-call-的关系": [
+      "24-mcp-与-function-call-的关系"
+    ],
+    "_3-mcp-包使用": [
+      "3-mcp-包使用"
+    ],
+    "_31-stdio-传输方式": [
+      "31-stdio-传输方式"
+    ],
+    "_311-服务端": [
+      "311-服务端"
+    ],
+    "_312-客户端直接调用": [
+      "312-客户端直接调用"
+    ],
+    "_313-客户端agent-调用": [
+      "313-客户端agent-调用"
+    ],
+    "_32-sse-传输方式": [
+      "32-sse-传输方式"
+    ],
+    "_321-服务端": [
+      "321-服务端"
+    ],
+    "_322-客户端直接调用": [
+      "322-客户端直接调用"
+    ],
+    "_323-客户端agent-调用": [
+      "323-客户端agent-调用"
+    ],
+    "_33-streamable-方式": [
+      "33-streamable-方式"
+    ],
+    "_331-服务端": [
+      "331-服务端"
+    ],
+    "_332-客户端直接调用": [
+      "332-客户端直接调用"
+    ],
+    "_333-客户端agent-调用": [
+      "333-客户端agent-调用"
+    ],
+    "_4-本节小结": [
+      "4-本节小结"
+    ]
+  },
+  "/agent/03-agent智能体": {
+    "_1-什么是-agent": [
+      "1-什么是-agent"
+    ],
+    "_11-从一个生活场景说起": [
+      "11-从一个生活场景说起"
+    ],
+    "_12-agent-与普通-llm-的对比": [
+      "12-agent-与普通-llm-的对比"
+    ],
+    "_2-什么是-agentic": [
+      "2-什么是-agentic"
+    ],
+    "_3-agent-五种模式": [
+      "3-agent-五种模式"
+    ],
+    "_31-工具使用模式tool-use-pattern": [
+      "31-工具使用模式tool-use-pattern"
+    ],
+    "_32-react-模式react-pattern": [
+      "32-react-模式react-pattern"
+    ],
+    "_33-反思模式reflection-pattern": [
+      "33-反思模式reflection-pattern"
+    ],
+    "_34-规划模式planning-pattern": [
+      "34-规划模式planning-pattern"
+    ],
+    "_35-多智能体模式multi-agent-pattern": [
+      "35-多智能体模式multi-agent-pattern"
+    ],
+    "_36-agent-模式的演进关系": [
+      "36-agent-模式的演进关系"
+    ],
+    "_4-代码实战": [
+      "4-代码实战"
+    ],
+    "_41-工具使用模式": [
+      "41-工具使用模式"
+    ],
+    "_42-react-模式": [
+      "42-react-模式"
+    ],
+    "_43-反思模式": [
+      "43-反思模式"
+    ],
+    "_44-规划模式": [
+      "44-规划模式"
+    ],
+    "_45-多智能体模式": [
+      "45-多智能体模式"
+    ],
+    "_5-本节小结": [
+      "5-本节小结"
+    ]
+  },
+  "/agent/04-a2a协议": {
+    "_1-agent2agent-protocol": [
+      "1-agent2agent-protocol"
+    ],
+    "_11-为什么需要-a2a从前三节的演进说起": [
+      "11-为什么需要-a2a从前三节的演进说起"
+    ],
+    "_12-一个贯穿全程的体检预约场景": [
+      "12-一个贯穿全程的体检预约场景"
+    ],
+    "_13-a2a-四大核心能力详解": [
+      "13-a2a-四大核心能力详解"
+    ],
+    "_14-更多场景a2a-在真实业务中的价值": [
+      "14-更多场景a2a-在真实业务中的价值"
+    ],
+    "_2-a2a-架构与核心概念": [
+      "2-a2a-架构与核心概念"
+    ],
+    "_21-架构剖析": [
+      "21-架构剖析"
+    ],
+    "_22-核心概念": [
+      "22-核心概念"
+    ],
+    "_221-agentskill": [
+      "221-agentskill"
+    ],
+    "_222-agentcard": [
+      "222-agentcard"
+    ],
+    "_223-task": [
+      "223-task"
+    ],
+    "_224-taskstate": [
+      "224-taskstate"
+    ],
+    "_225-taskstatus": [
+      "225-taskstatus"
+    ],
+    "_226-a2aserver": [
+      "226-a2aserver"
+    ],
+    "_227-artifacts": [
+      "227-artifacts"
+    ],
+    "_228-agentnetwork": [
+      "228-agentnetwork"
+    ],
+    "_229-aiagentrouter": [
+      "229-aiagentrouter"
+    ],
+    "_3-a2aserver-串行": [
+      "3-a2aserver-串行"
+    ],
+    "_31-排期-agent-服务端": [
+      "31-排期-agent-服务端"
+    ],
+    "_32-预约-agent-服务端": [
+      "32-预约-agent-服务端"
+    ],
+    "_33-串行编排器": [
+      "33-串行编排器"
+    ]
+  },
+  "/projects/rag-knowledge-base/06-主链路编排与置信度": {
+    "三检索分数-答案可信度": [
+      "三检索分数--答案可信度"
+    ],
+    "五prompt-按意图-风险双维度选": [
+      "五prompt-按意图--风险双维度选"
+    ]
+  },
+  "/projects/rag-knowledge-base/07-缓存版本与隔离": {
+    "三知识库版本staged-active-archived": [
+      "三知识库版本staged--active--archived"
+    ]
+  },
+  "/rag/01_rag基础_核心概念": {
+    "_1-什么是-rag检索增强生成": [
+      "1-什么是-rag检索增强生成"
+    ],
+    "_2-rag-系统的基本组成": [
+      "2-rag-系统的基本组成"
+    ],
+    "_3-向量和向量检索是什么": [
+      "3-向量和向量检索是什么"
+    ]
+  },
+  "/rag/02-runnable基础接口层": {
+    "_1-invoke同步调用": [
+      "1-invoke同步调用"
+    ],
+    "_2-ainvoke异步调用": [
+      "2-ainvoke异步调用"
+    ],
+    "_3-stream流式输出": [
+      "3-stream流式输出"
+    ],
+    "_4-batch批量调用": [
+      "4-batch批量调用"
+    ],
+    "_5-核心方法小结": [
+      "5-核心方法小结"
+    ],
+    "三-管道符-组合": [
+      "三-管道符--组合"
+    ],
+    "_1-重试with_retry": [
+      "1-重试with_retry"
+    ],
+    "_2-回退with_fallbacks": [
+      "2-回退with_fallbacks"
+    ]
+  },
+  "/rag/03_核心抽象层": {
+    "_1-messages消息": [
+      "1-messages消息"
+    ],
+    "_11-定位": [
+      "11-定位"
+    ],
+    "_12-核心类型": [
+      "12-核心类型"
+    ],
+    "_13-代码示例": [
+      "13-代码示例"
+    ],
+    "_14-v10-新特性content_blocks": [
+      "14-v10-新特性content_blocks"
+    ],
+    "_2-prompt提示模板": [
+      "2-prompt提示模板"
+    ],
+    "_21-定位": [
+      "21-定位"
+    ],
+    "_22-prompttemplate-代码示例": [
+      "22-prompttemplate-代码示例"
+    ],
+    "_23-chatprompttemplate-messagesplaceholder-代码示例": [
+      "23-chatprompttemplate--messagesplaceholder-代码示例"
+    ],
+    "_3-parser输出解析器": [
+      "3-parser输出解析器"
+    ],
+    "_31-定位": [
+      "31-定位"
+    ],
+    "_32-stroutputparser": [
+      "32-stroutputparser"
+    ],
+    "_33-jsonoutputparser": [
+      "33-jsonoutputparser"
+    ],
+    "_34-pydanticoutputparser": [
+      "34-pydanticoutputparser"
+    ]
+  },
+  "/rag/04_langchain-文档处理与对话历史": {
+    "_1-loader文档加载器": [
+      "1-loader文档加载器"
+    ],
+    "_11-定位": [
+      "11-定位"
+    ],
+    "_12-textloader-加载-txt": [
+      "12-textloader-加载-txt"
+    ],
+    "_13-pypdfloader-加载-pdf": [
+      "13-pypdfloader-加载-pdf"
+    ],
+    "_14-webbaseloader-加载网页": [
+      "14-webbaseloader-加载网页"
+    ],
+    "_2-splitter文本分割器": [
+      "2-splitter文本分割器"
+    ],
+    "_21-定位": [
+      "21-定位"
+    ],
+    "_22-recursivecharactertextsplitter": [
+      "22-recursivecharactertextsplitter"
+    ],
+    "_23-tokentextsplitter": [
+      "23-tokentextsplitter"
+    ],
+    "_3-vectorstore向量存储": [
+      "3-vectorstore向量存储"
+    ],
+    "_31-定位": [
+      "31-定位"
+    ],
+    "_32-创建向量库": [
+      "32-创建向量库"
+    ],
+    "_33-核心操作": [
+      "33-核心操作"
+    ],
+    "_4-history消息历史": [
+      "4-history消息历史"
+    ],
+    "_41-定位": [
+      "41-定位"
+    ],
+    "_42-inmemorychatmessagehistory": [
+      "42-inmemorychatmessagehistory"
+    ],
+    "_43-redischatmessagehistory": [
+      "43-redischatmessagehistory"
+    ],
+    "_44-与-prompt-组合": [
+      "44-与-prompt-组合"
+    ]
+  },
+  "/rag/05_智能体工具与中间件": {
+    "_1-组件总览": [
+      "1-组件总览"
+    ],
+    "_2-tools工具": [
+      "2-tools工具"
+    ],
+    "_21-定位": [
+      "21-定位"
+    ],
+    "_22-使用-tool-装饰器定义工具推荐": [
+      "22-使用-tool-装饰器定义工具推荐"
+    ],
+    "_23-使用-basetool-基类定义工具": [
+      "23-使用-basetool-基类定义工具"
+    ],
+    "_3-create_agent智能体创建器": [
+      "3-create_agent智能体创建器"
+    ],
+    "_31-定位": [
+      "31-定位"
+    ],
+    "_32-新老写法对比": [
+      "32-新老写法对比"
+    ],
+    "_33-create_agent-使用示例": [
+      "33-create_agent-使用示例"
+    ],
+    "_4-middleware中间件": [
+      "4-middleware中间件"
+    ],
+    "_41-定位": [
+      "41-定位"
+    ],
+    "_42-核心钩子": [
+      "42-核心钩子"
+    ],
+    "_43-预置中间件": [
+      "43-预置中间件"
+    ],
+    "_44-自定义中间件": [
+      "44-自定义中间件"
+    ],
+    "_5-小结": [
+      "5-小结"
+    ]
+  },
+  "/rag/06_rag_离线链路": {
+    "_1-递归层级分块recursivehierarchical-chunking": [
+      "1-递归层级分块recursivehierarchical-chunking"
+    ],
+    "_11-核心理论": [
+      "11-核心理论"
+    ],
+    "_12-代码实现基于-langchain": [
+      "12-代码实现基于-langchain"
+    ],
+    "_2-语义分块semantic-chunking": [
+      "2-语义分块semantic-chunking"
+    ],
+    "_21-核心理论": [
+      "21-核心理论"
+    ],
+    "_22-代码实现基于-sentence-transformers": [
+      "22-代码实现基于-sentence-transformers"
+    ]
+  },
+  "/rag/07_rag_在线链路": {
+    "_0-运行前准备": [
+      "0-运行前准备"
+    ],
+    "_1-dense-sparse-混合检索": [
+      "1-dense--sparse-混合检索"
+    ],
+    "_2-bge-reranker-精排": [
+      "2-bge-reranker-精排"
+    ],
+    "_3-上下文构建与-dashscope-流式生成": [
+      "3-上下文构建与-dashscope-流式生成"
+    ]
+  },
+  "/rag/08_rag_评估调优": {
+    "_1-检索侧指标": [
+      "1-检索侧指标"
+    ],
+    "_2-生成侧指标": [
+      "2-生成侧指标"
+    ],
+    "_3-常用评估工具": [
+      "3-常用评估工具"
+    ],
+    "_4-常见调优点": [
+      "4-常见调优点"
+    ],
+    "_5-进阶方向": [
+      "5-进阶方向"
+    ],
+    "_6-常见误区": [
+      "6-常见误区"
+    ]
+  }
+}
