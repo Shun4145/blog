@@ -25,12 +25,12 @@ path: /engineering/my-note
 kind: article
 section: engineering
 tags: [软件工程]
-date: '2026-10-01'
-lastmod: '2026-10-01'
+date: '2026-01-01'
+lastmod: '2026-01-01'
 draft: false
 toc: true
 ---
-```
+``` 
 
 编辑后运行 `npm run inventory` 更新文章列表和全文搜索索引。已有网址变更时需要显式建立重定向，脚本会阻止无意改动。源文件的历史 `source` 和 `migration` 字段仅记录迁移来源，不依赖 Hugo。
 
