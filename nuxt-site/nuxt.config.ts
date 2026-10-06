@@ -23,6 +23,11 @@ export default defineNuxtConfig({
     },
   },
   nitro: {
+    // Cloudflare's static preset defaults to dist; keep CI and local output aligned.
+    output: {
+      dir: '{{ rootDir }}/.output/public',
+      publicDir: '{{ output.dir }}',
+    },
     prerender: {
       crawlLinks: true,
       failOnError: true,
